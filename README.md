@@ -43,11 +43,44 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM
-### Name:
-### Register Number:
-```python
+### Name:JANANI R
+### Register Number: 212221230039
+```
+from google.colab import auth
+import gspread
+from google.auth import default
+import pandas as pd
+auth.authenticate_user()
+creds, _ = default()
+gc = gspread.authorize(creds)
+worksheet=gc.open("Jananii").sheet1
+data=worksheet.get_all_values()
+dataset1 = pd.DataFrame(data[1:], columns=data[0])
+dataset1 = dataset1.astype({'input':'float'})
+dataset1 = dataset1.astype({'output':'float'})
+dataset1.head()
+X = dataset1[['input']].values
+y = dataset1[['output']].values
+X
+X_train,X_test,y_train,y_test = train_test_split(X,y,test_size = 0.33,random_state = 33)
+Scaler = MinMaxScaler()
+Scaler.fit(X_train)
+X_train1 = Scaler.transform(X_train)
+ai_brain = Sequential([
+    Dense(6,activation = 'relu'),
+    Dense(6,activation = 'relu'),
+    Dense(1)
+])
+ai_brain.compile(optimizer = 'rmsprop', loss = 'mse')
+ai_brain.fit(X_train1,y_train,epochs = 80)
+loss_df = pd.DataFrame(ai_brain.history.history)
+loss_df.plot()
+X_test1 = Scaler.transform(X_test)
+ai_brain.evaluate(X_test1,y_test)
+X_n1 = [[30]]
+X_n1_1 = Scaler.transform(X_n1)
+ai_brain.predict(X_n1_1)
 
-Include your code here
 
 
 ```
@@ -71,4 +104,6 @@ Include your sample input and output here
 
 ## RESULT
 
-Include your result here
+A neural network regression model for the given dataset has been developed Sucessfully.
+
+
