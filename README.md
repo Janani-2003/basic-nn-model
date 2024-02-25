@@ -43,7 +43,7 @@ Plot the performance plot
 Evaluate the model with the testing data.
 
 ## PROGRAM
-### Name:JANANI R
+### Name: JANANI R
 ### Register Number: 212221230039
 ```
 from google.colab import auth
@@ -81,26 +81,28 @@ X_n1 = [[30]]
 X_n1_1 = Scaler.transform(X_n1)
 ai_brain.predict(X_n1_1)
 
-
-
 ```
 ## Dataset Information
 
-Include screenshot of the dataset
+![jg](https://github.com/Janani-2003/basic-nn-model/assets/94288340/dc1d4b18-e8ab-4dfb-9f16-725fb5b6bf30)
+
 
 ## OUTPUT
 
 ### Training Loss Vs Iteration Plot
 
-Include your plot here
+![jit](https://github.com/Janani-2003/basic-nn-model/assets/94288340/27b84a34-1702-4fb1-b818-fa75a0ed799d)
+
 
 ### Test Data Root Mean Squared Error
 
-Find the test data root mean squared error
+![jtest](https://github.com/Janani-2003/basic-nn-model/assets/94288340/2a1a1366-035d-42db-b02e-8efcfcf4eaf4)
+
 
 ### New Sample Data Prediction
 
-Include your sample input and output here
+![jnew](https://github.com/Janani-2003/basic-nn-model/assets/94288340/e6a97ae6-05bd-4442-8d55-8b5b092752dc)
+
 
 ## RESULT
 
